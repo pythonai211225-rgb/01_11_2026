@@ -22,7 +22,7 @@ class FourSides(Shape, ABC):
         return self._a + self._b + self._c + self._d
 
     def __str__(self):
-        return f"[Four sides] a:{self._a} b:{self._b} c:{self._c} d:{self._d} " +\
+        return f"[Four-sides] a:{self._a} b:{self._b} c:{self._c} d:{self._d} " +\
             super().__str__()
 
 

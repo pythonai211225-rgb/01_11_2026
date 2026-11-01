@@ -1,11 +1,10 @@
 from typing import override
 
-from four_sides import FourSides
+from .four_sides import FourSides
 
 class Rectangle(FourSides):
     def __init__(self, name, a, b):
         super().__init__(name, a=a, b=b, c=a, d=b)
-        self._name = 'Rectangle'
 
     @property
     @override

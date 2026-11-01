@@ -24,10 +24,7 @@ class Circle(Shape):
 
     @override
     def __str__(self):
-        return (f'radius={self.radius} ' + \
+        return (f'[Circle] radius:{self.radius} ' + \
                 super().__str__())
 
-c = Circle("Circle_4.9", 4.9)
-print(c.name)
-print(c)
 
