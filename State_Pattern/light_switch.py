@@ -1,34 +1,19 @@
+from State_Pattern import switch_state
 
 class LightSwitch:
-    def __init__(self, state):
+    def __init__(self, state: switch_state.SwitchState):
         self._state = state
+        print(f'Creating switch- State is {self._state}')
 
     @property
     def state(self):
         return self._state
 
     def light_on(self):
-        if self._state == 'broken':
-            print('Switch already broken')
-            return
-        if self._state == 'on':
-            print('Switch is already on...')
-            return
-        if self._state == 'off':
-            self._state = 'on'
-            print('Switch On')
+        self._state = self._state.turn_on()
 
     def light_off(self):
-        if self._state == 'broken':
-            print('Switch already broken')
-            return
-        if self._state == 'off':
-            self._state = 'broken'
-            print('Switch is now broken')
-            return
-        if self._state == 'on':
-            self._state = 'off'
-            print('Switch On')
+        self._state = self._state.turn_off()
 
-
-
+    def light_fix(self):
+        self._state = self._state.fix()
